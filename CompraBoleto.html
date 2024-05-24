@@ -1,0 +1,296 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+            .contenedor{
+             background:white; 
+             height: auto;
+            display: grid;
+            font-family: "Inter", sans-serif;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 3fr 3fr;
+            grid-template-areas: 
+                "1"
+                "2"
+                "3";}
+            .titulo{
+                  grid-area: 1;
+                  font-size: 58px;
+                  font-weight: 500;
+                  display: flex;
+                  align-items: center;
+                   justify-content: center;
+                    border-bottom:  3px solid black;
+            }
+            .datos_evento{
+                  grid-area: 2;
+                 display: grid;
+                 grid-template-columns: 30% 70% ;
+                grid-template-rows: 1fr ;
+                grid-template-areas: 
+                " p1_cv  p2_cv";
+                 border-bottom:  3px solid black;
+                
+            }
+            .boletos_evento{
+                  grid-area: 3;
+                   display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-template-rows: 1fr ;
+            grid-template-areas: 
+                "p1 p2 p3";
+            
+            }
+            .boletos_evento_p1{
+                grid-area: p1;
+                padding: 20px;
+                 text-align: center;
+                 font-size: 28px;
+                 font-weight: 500;
+            }
+            
+            .boletos_evento_p2{
+                  grid-area: p2;
+                 text-align: center;
+                  font-size: 28px;
+                 font-weight: 500;
+                 border-left: 3px solid black;
+                  
+            }
+            .boletos_evento_p3{
+                 border-left: 3px solid black;
+                 grid-area: p3;
+                 align-items: center;
+                
+                 display: flex;
+                 flex-direction: column;
+                 font-size: 28px;
+                 font-weight: 500;
+                  text-align: center;
+            }
+            .img_crear_evento{
+                width: 380px;
+                height: 380px;
+            }
+            .datos_evento_p1{
+                grid-area: p1_cv;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            .datos_evento_p2{
+                 grid-area: p2_cv;
+                 padding: 30px;
+                 font-weight: 600;
+                 font-size: 32px;
+                
+            }
+            
+            p{
+                margin: 0px
+            }
+            .img_mapa{
+                 width: 350px;
+                height: 350px;
+            }
+            .visa-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 300px;
+  height: 180px;
+  background-image: radial-gradient(
+    circle 897px at 9% 80.3%,
+    rgba(55, 60, 245, 1) 0%,
+    rgba(234, 161, 15, 0.9) 100.2%
+  );
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  gap: 15px;
+}
+.logoContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: -30;
+  padding: 18px;
+}
+.svgLogo {
+  height: 40px;
+  width: auto;
+}
+.inputstyle::placeholder {
+  color: #ffffff;
+}
+.inputstyle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  caret-color: red;
+  font-size: 13px;
+  height: 25px;
+  letter-spacing: 1.5px;
+}
+.number-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+#cardNumber {
+  width: 100%;
+  height: 25px;
+}
+.name-date-cvv-container {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  gap: 10px;
+}
+.name-wrapper {
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.expiry-wrapper,
+.cvv-wrapper {
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+.cvv-wrapper {
+  width: 10%;
+}
+#expiry,
+#cvv {
+  width: 100%;
+}
+.input-label {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #e2e2e2;
+  width: 100%;
+}
+
+        </style>
+    </head>
+    <body>
+          <div class="contenedor" id="contenedor">
+            <div class="titulo">
+                 <p>Compra de boletos para:Nombre del evento<br></p>
+            </div>
+            <div class="datos_evento">
+                <div class="datos_evento_p1">
+                     <img src="img_p1.jpg" class="img_crear_evento">
+                </div>
+                <div class="datos_evento_p2">
+                    <p>Fecha del evento:DD/MM/AA<br><br><br></p>
+                    <p>Lugar del evento:LugarEvento<br><br><br></p>
+                    <p>Hora del evento:HH:MM<br><br><br></p>
+                </div>
+               
+            </div>
+            <div class="boletos_evento">
+                <div class="boletos_evento_p1">
+                      <p>Mapa del inmueble</p>
+                        <img src="mapa_proyecto.jpg" class="img_mapa">
+                </div>
+                <div class="boletos_evento_p2">
+                    <p>Selección de boletos<br><br></p>
+                     <label for="name" class="form__label">Sección  </label><input type="input" class="form__field"  required=""><br><br>
+                     <label for="name" class="form__label">Fila     </label><input type="input" class="form__field" required=""><br><br>
+                     <label for="name" class="form__label">Asiento  </label><input type="input" class="form__field" required="">
+    
+                        
+                </div>
+                <div class="boletos_evento_p3">
+                  <p>Metodo de Pago<br><br></p>
+                  <div class="visa-card">
+  <div class="logoContainer">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="23"
+      height="23"
+      viewBox="0 0 48 48"
+      class="svgLogo"
+    >
+      <path
+        fill="#ff9800"
+        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"
+      ></path>
+      <path
+        fill="#d50000"
+        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"
+      ></path>
+      <path
+        fill="#ff3d00"
+        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"
+      ></path>
+    </svg>
+  </div>
+  <div class="number-container">
+    <label class="input-label" for="cardNumber">CARD NUMBER</label>
+    <input
+      class="inputstyle"
+      id="cardNumber"
+      placeholder="XXXX XXXX XXXX XXXX"
+      name="cardNumber"
+      type="text"
+    />
+  </div>
+
+  <div class="name-date-cvv-container">
+    <div class="name-wrapper">
+      <label class="input-label" for="holderName">CARD HOLDER</label>
+      <input
+        class="inputstyle"
+        id="holderName"
+        placeholder="NAME"
+        type="text"
+      />
+    </div>
+
+    <div class="expiry-wrapper">
+      <label class="input-label" for="expiry">VALID THRU</label>
+      <input class="inputstyle" id="expiry" placeholder="MM/YY" type="text" />
+    </div>
+    <div class="cvv-wrapper">
+      <label class="input-label" for="cvv">CVV</label>
+      <input
+        class="inputstyle"
+        placeholder="***"
+        maxlength="3"
+        id="cvv"
+        type="password"
+      />
+    </div>
+  </div>
+</div>
+
+                     <label for="name" class="form__label">Titular  </label><input type="input" class="form__field"  required=""><br>
+                     <label for="name" class="form__label">Número de cuenta     </label><input type="input" class="form__field" required=""><br>
+                     <label for="name" class="form__label">Cvv  </label><input type="input" class="form__field" required=""><br>
+                     <label for="name" class="form__label">Vencimiento  </label><input type="input" class="form__field" required="">
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
