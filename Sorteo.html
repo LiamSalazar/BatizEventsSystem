@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+            .contenedor{
+             background:white; 
+             height: 100vh;
+            display: grid;
+            font-family: "Inter", sans-serif;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 9fr;
+            grid-template-areas: 
+                "titulo"
+                "datos";}
+            .titulo{
+                 grid-area: titulo;
+                 
+                  display: grid;
+                   grid-template-columns: 80% 20%;
+            grid-template-rows: 1fr;
+              grid-template-areas: 
+                "titulo_p1 titulo_p2";
+                  border-bottom: 3px solid black;
+            }
+            p{
+                 margin: 0px;
+            }
+            .titulo_p1{
+                   grid-area: titulo_p1;
+                   font-size: 48px;
+                  font-weight: 500;
+                     display: flex;
+                  align-items: center;
+                   justify-content: left;
+                   padding-left: 30px;
+            }
+         
+
+            .datos{
+                text-align: center;
+                 grid-area: datos;
+                  display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+                "p1 p2 p3";
+             font-size: 33px;
+                  font-weight: 400;
+                
+            }
+            .title{
+                font-size: 30px;
+                  font-weight: 500;
+            }
+            
+            .num_asignado{
+                   grid-area: p1;
+                  border-right: 3px solid black;
+                  padding:25px; 
+                    display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 9fr;
+            }
+            .numero{
+                 font-size: 35px;
+                  font-weight: 500;
+                    display: flex;
+                  align-items: center;
+                   justify-content: center;
+            }
+            .tiempo_restante{
+                   grid-area: p1;
+                  border-right: 3px solid black;
+                  padding:25px; 
+                    display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 9fr;
+            }
+            .date_inpt{
+                 font-size: 35px;
+                  font-weight: 500;
+                    display: flex;
+                  align-items: center;
+                   justify-content: center;
+            }
+            .Resultado_sorteo{
+                   grid-area: p1;
+                  border-right: 3px solid black;
+                  padding:25px; 
+                    display: grid;
+            grid-template-columns: 1fr ;
+            grid-template-rows: 1fr 9fr;
+            }
+            .ganador{
+                 font-size: 35px;
+                  flex-direction: column;
+                  font-weight: 500;
+                    display: flex;
+                  align-items: center;
+                   justify-content: center;
+            }
+            .tiempo_restante{
+                  padding:25px; 
+                  grid-area: p2;
+                  border-right: 3px solid black;  
+                 
+            }
+            .Resultado_sorteo{
+                  padding:25px; 
+                  grid-area: p3;
+                
+            }
+                    .input-style {
+                padding: 10px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+                font-size: 25px;
+                color: #555;
+                outline: none;
+              
+              }
+
+              .input-style:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+              }
+              .p1{
+                    font-size: 50px;
+                  font-weight: 700; 
+              }
+              .p2{
+                  
+              }
+        </style>
+    </head>
+    <body>
+       <div class="contenedor" id="contenedor">
+            <div class="titulo">
+                <div class="titulo_p1">  <p>Sorteo de Boletos<br></p></div>                
+            </div>
+            <div class="datos">
+                <div class="num_asignado">
+                    <div ><p class="title">Número asignado para el sorteo:<br></p></div>                
+                    <div class="numero"><p>56,765<br></p></div>                
+                 </div>
+                <div class="tiempo_restante">
+                     <div><p class="title">Tiempo Restante del sorteo :<br></p></div>
+                     <div class="date_inpt"><input  class="input-style"type="datetime-local"></div>
+                </div>
+                <div class="Resultado_sorteo">
+                    <div><p class="title">Resultado del sorteo:<br></p></div>
+                    <div class="ganador"><p class="p1">!Has ganado¡<br></p>
+                        <p class="p2">Puedes comprar tu boleto.</p>
+                   </div> 
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
