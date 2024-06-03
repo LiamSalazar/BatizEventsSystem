@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="home.css">
+         
+               <!-- Swiper CSS -->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="space">
+            
+
+            <div class="videos-principales">
+                
+                
+                <section class="home">
+        
+        <img class="img-slide active" src="c_2.jpg" ></img>
+        <img decoding="async" class="img-slide" src="c_1.jpg" ></img>
+        <img decoding="async" class="img-slide" src="c_3.jpg" ></img>
+        <img decoding="async" class="img-slide" src="c_1.jpg" ></img>
+        <img decoding="async" class="img-slide" src="c_2.jpg" ></img>
+        <div class="content active">
+              <script>
+            function irACuentaArtista() {
+                window.location.href = "compra_boletos.html";
+            }
+                                            </script>
+            <h1>Nombre del evento<br><span>Lugar del evento Fecha del evento</span></h1>
+            
+            <a href="#" onclick=" irACuentaArtista()">Solicitar boletos</a>
+        </div>
+        <div class="content">
+         <h1>Nombre del evento<br><span>Lugar del evento Fecha del evento</span></h1>
+              <a href="#" onclick=" irACuentaArtista()">Solicitar boletos</a>
+        </div>
+        <div class="content">
+          <h1>Nombre del evento<br><span>Lugar del evento Fecha del evento</span></h1>
+              <a href="#" onclick=" irACuentaArtista()">Solicitar boletos</a>
+        </div>
+        <div class="content">
+         <h1>Nombre del evento<br><span>Lugar del evento Fecha del evento</span></h1>
+       
+            <a href="#" onclick=" irACuentaArtista()">Solicitar boletos</a>
+        </div>
+        <div class="content">
+         <h1>Nombre del evento<br><span>Lugar del evento Fecha del evento</span></h1>
+           <a href="#" onclick=" irACuentaArtista()">Solicitar boletos</a>
+        </div>
+     
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+                <script>
+                    const navigation = document.querySelector(".navigation");
+                    const btns = document.querySelectorAll(".nav-btn");
+                    const slides = document.querySelectorAll(".img-slide");
+                    const contents = document.querySelectorAll(".content");
+
+                    var sliderNav = function(manual){
+                        btns.forEach((btn) => {
+                            btn.classList.remove("active");
+                        });
+
+                        slides.forEach((slide) => {
+                            slide.classList.remove("active");
+                        });
+
+                        contents.forEach((content) => {
+                            content.classList.remove("active");
+                        });
+
+                        btns[manual].classList.add("active");
+                        slides[manual].classList.add("active");
+                        contents[manual].classList.add("active");
+                    }
+
+                        btns.forEach((btn, i) => {
+                            btn.addEventListener("click", () => {
+                                sliderNav(i)
+                            });
+                        });     
+                            </script>
+
+            </div>
+                     <h1 >Populares</h1>
+
+              
+            <!-- script de slider videos -----------------------------------> 
+
+            <div class="contenedor-generos-sliders">
+
+                <div class="container swiper">
+                     <div class="slide-container">
+                       <div class="card-wrapper swiper-wrapper">
+                         <div class="card swiper-slide"  onclick=" irACuentaArtista()">
+                           <div class="image-box">
+                             <img src="c_1.jpg" alt="" />
+                           </div>
+                           <div class="profile-details">
+                            
+                             <div class="name-job">
+                               <h3 class="name">Nombre del evento</h3>
+                               <h4 class="job">Luegar del evento Fecha del evento</h4>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="card swiper-slide" onclick=" irACuentaArtista()">
+                           <div class="image-box">
+                             <img src="c_2.jpg" alt="" />
+                           </div>
+                           <div class="profile-details">
+                            
+                             <div class="name-job">
+                              <h3 class="name">Nombre del evento</h3>
+                               <h4 class="job">Luegar del evento Fecha del evento</h4>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="card swiper-slide" onclick=" irACuentaArtista()">
+                           <div class="image-box">
+                             <img src="c_3.jpg" alt="" />
+                           </div>
+                           <div class="profile-details">
+                             
+                             <div class="name-job">
+                              <h3 class="name">Nombre del evento</h3>
+                               <h4 class="job">Luegar del evento Fecha del evento</h4>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="card swiper-slide" onclick=" irACuentaArtista()">
+                           <div class="image-box">
+                             <img src="c_1.jpg" alt="" />
+                           </div>
+                           <div class="profile-details">
+                          
+                             <div class="name-job">
+                               <h3 class="name">Nombre del evento</h3>
+                               <h4 class="job">Luegar del evento Fecha del evento</h4>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="card swiper-slide" onclick=" irACuentaArtista()">
+                           <div class="image-box">
+                             <img src="c_2.jpg" alt="" />
+                           </div>
+                           <div class="profile-details">
+                            
+                             <div class="name-job">
+                               <h3 class="name">Nombre del evento</h3>
+                               <h4 class="job">Luegar del evento Fecha del evento</h4>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="swiper-button-next swiper-navBtn"></div>
+                     <div class="swiper-button-prev swiper-navBtn"></div>
+                     <div class="swiper-pagination"></div>
+                   </div>
+                   <script src="swiper-bundle.min.js"></script>
+                   <script src="script.js"></script>
+            
+                  </div>
+                  </div>
+    </body>
+</html>
