@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .contenedor {
+        background: white;
+        height: 100vh;
+        font-family: "Inter", sans-serif;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 6fr;
+        grid-template-areas:
+          "tirulo"
+          "datos"
+          "Qr";
+      }
+      .tirulo {
+        grid-area: tirulo;
+        font-size: 58px;
+        font-weight: 500;
+        display: flex;
+        padding-left: 30px;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 3px solid black;
+      }
+      .datos {
+        grid-area: datos;
+        border-bottom: 3px solid black;
+        display: grid;
+        grid-template-columns: 2fr 2fr 6fr;
+        grid-template-rows: 1fr;
+      }
+      .datos_3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 4fr 4fr 1fr;
+        grid-template-areas:
+          " titu titu titu"
+          "secion_1 secion_2 secion_3"
+          " bl bl bl";
+      }
+      .titu {
+        display: flex;
+        grid-area: titu;
+        border-bottom: 3px solid black;
+        align-items: center;
+        padding-left: 15px;
+        text-align: left;
+        font-size: 22px;
+        font-weight: 500;
+      }
+      .secion_1 {
+        font-size: 22px;
+        font-weight: 500;
+        grid-area: secion_1;
+        border-bottom: 3px solid black;
+        border-right: 3px solid black;
+        padding: 15px;
+        text-align: center;
+      }
+      .secion_2 {
+        font-size: 22px;
+        font-weight: 500;
+        grid-area: secion_2;
+        border-bottom: 3px solid black;
+        border-right: 3px solid black;
+        padding: 15px;
+        text-align: center;
+      }
+      .secion_3 {
+        font-size: 22px;
+        font-weight: 500;
+        grid-area: secion_3;
+        border-bottom: 3px solid black;
+        padding: 15px;
+        text-align: center;
+      }
+      .bl {
+        grid-area: bl;
+      }
+      .Qr {
+        grid-area: Qr;
+        border-bottom: 3px solid black;
+      }
+      .img_crear_evento {
+        width: 200px;
+        height: 200px;
+      }
+      .datos_1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .Qr {
+        font-size: 25px;
+        font-weight: 500;
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows: 1fr;
+      }
+      .Qr_2 {
+        padding: 20px;
+        text-align: center;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+      }
+      p {
+        margin: 0px;
+      }
+      .img_qr {
+        width: 500px;
+        height: 500px;
+      }
+      .textito {
+        font-size: 20px;
+        font-weight: 500;
+        color: #878787;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="tirulo">
+        <p>Boleto<br /></p>
+      </div>
+      <div class="datos">
+        <div class="datos_1">
+          <img src="img_p1.jpg" class="img_crear_evento" />
+        </div>
+        <div class="datos_2">
+          <p><br /><br />Fecha del evento:DD/MM/AA<br /><br /><br /></p>
+          <p>Lugar del evento:LugarEvento<br /><br /><br /></p>
+          <p>Hora del evento:HH:MM<br /><br /><br /></p>
+        </div>
+        <div class="datos_3">
+          <div class="titu">
+            <p>Tipo de boleto</p>
+          </div>
+
+          <div class="secion_1">
+            <p>Sección</p>
+            <span class="textito">USD</span>
+          </div>
+          <div class="secion_2">
+            <p>Fila</p>
+            <span class="textito">USD</span>
+          </div>
+          <div class="secion_3">
+            <p>Asiento</p>
+            <span class="textito">USD</span>
+          </div>
+
+          <div class="bl"></div>
+        </div>
+      </div>
+      <div class="Qr">
+        <div class="Qr_1"></div>
+        <div class="Qr_2">
+          <p>Mapa del inmueble<br /><br /></p>
+          <img src="mapa_proyecto.jpg" class="img_qr" />
+          <p></p>
+          <p class="textito"></p>
+          <span class="textito"> </span>
+        </div>
+        <div class="Qr_3"></div>
+      </div>
+    </div>
+  </body>
+</html>

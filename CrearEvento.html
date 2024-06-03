@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      .contenedor {
+        background: white;
+        height: 100vh;
+        display: grid;
+        font-family: "Inter", sans-serif;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 9fr;
+        grid-template-areas:
+          "titulo"
+          "datos";
+      }
+      .titulo {
+        grid-area: titulo;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "titulo_p1 titulo_p2";
+        border-bottom: 3px solid black;
+      }
+      p {
+        margin: 0px;
+      }
+      .titulo_p1 {
+        grid-area: titulo_p1;
+        font-size: 48px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 30px;
+      }
+      .input-container:nth-of-type(1) {
+        grid-area: inp_p1;
+      }
+      .input-container:nth-of-type(2) {
+        grid-area: inp_p2;
+      }
+      .input-container:nth-of-type(3) {
+        grid-area: inp_p3;
+      }
+
+      .titulo_p2 {
+        grid-area: titulo_p2;
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        justify-content: right;
+      }
+
+      .datos {
+        grid-area: datos;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "p1 p2 p3";
+        font-size: 23px;
+        font-weight: 400;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .datos_evento {
+        grid-area: p1;
+        border-right: 3px solid black;
+        padding: 25px;
+      }
+      .datos_evento_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+          "inp_p1 inp_p1"
+          "inp_p2 inp_p3"
+          "date_inpt inp_event_p4";
+      }
+      .date_inpt {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .datos_boleto_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+          "inp_p1 inp_p1"
+          "inp_p2 inp_p3";
+      }
+      .datos_boleto {
+        padding: 25px;
+        grid-area: p2;
+        border-right: 3px solid black;
+      }
+      .datos_asiento {
+        padding: 25px;
+        grid-area: p3;
+      }
+
+      button {
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #212121;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+      }
+
+      button:hover {
+        color: #e8e8e8;
+      }
+
+      button:hover::before {
+        width: 100%;
+      }
+
+      .input-container {
+        position: relative;
+        margin: 20px;
+      }
+
+      /* Input field */
+      .input-field {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        outline: none;
+        background-color: transparent;
+      }
+
+      /* Input label */
+      .input-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 16px;
+        color: rgba(204, 204, 204, 0);
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      /* Input highlight */
+      .input-highlight {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: #007bff;
+        transition: all 0.3s ease;
+      }
+
+      /* Input field:focus styles */
+      .input-field:focus + .input-label {
+        top: -20px;
+        font-size: 12px;
+        color: #007bff;
+      }
+
+      .input-field:focus + .input-label + .input-highlight {
+        width: 100%;
+      }
+
+      .radio-buttons {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .radio-button {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .radio-button input[type="radio"] {
+        display: none;
+      }
+
+      .radio-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #aaa;
+        position: relative;
+        margin-right: 10px;
+      }
+
+      .radio-circle::before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ddd;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: all 0.2s ease-in-out;
+      }
+
+      .radio-button input[type="radio"]:checked + .radio-circle::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      .radio-button:nth-of-type(1)
+        input[type="radio"]:checked
+        + .radio-circle::before {
+        background-color: #007bff;
+      }
+
+      .radio-button:nth-of-type(2)
+        input[type="radio"]:checked
+        + .radio-circle::before {
+        background-color: #007bff;
+      }
+
+      .radio-button:hover .radio-circle {
+        border-color: #555;
+      }
+
+      .radio-button:hover input[type="radio"]:checked + .radio-circle::before {
+        background-color: #555;
+      }
+      .input {
+        max-width: 190px;
+        display: none;
+      }
+
+      .labelFile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 450px;
+        height: 190px;
+        border: 2px dashed #ccc;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+        color: #404040;
+        cursor: pointer;
+      }
+      .input-style {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #555;
+        outline: none;
+      }
+
+      .input-style:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    </style>
+    <script>
+      function confirmarDatos() {
+        if (confirm("¿Son correctos los datos?")) {
+          window.location.href = "DesplegadoEvento.html";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="contenedor" id="contenedor">
+      <div class="titulo">
+        <div class="titulo_p1">
+          <p>Creación de eventos<br /></p>
+        </div>
+        <div class="titulo_p2">
+          <button onclick="confirmarDatos()">Crear Evento</button>
+        </div>
+      </div>
+      <div class="datos">
+        <div class="datos_evento">
+          <p class="title">Datos del evento<br /><br /></p>
+          <div class="datos_evento_container">
+            <div class="input-container">
+              <input
+                placeholder="Festival Internacional Cervantino"
+                class="input-field"
+                type="text"
+              />
+              <label for="input-field" class="input-label"
+                >Nombre del evento</label
+              >
+              <span class="input-highlight"></span>
+            </div>
+            <div class="input-container">
+              <input
+                placeholder="Palacio de los Deportes"
+                class="input-field"
+                type="text"
+              />
+              <label for="input-field" class="input-label"
+                >Lugar del evento</label
+              >
+              <span class="input-highlight"></span>
+            </div>
+            <div class="input-container">
+              <input placeholder="50,000" class="input-field" type="text" />
+              <label for="input-field" class="input-label">Aforo máximo</label>
+              <span class="input-highlight"></span>
+            </div>
+            <div class="date_inpt">
+              <p>Fecha del evento<br /></p>
+              <input class="input-style" type="date" />
+            </div>
+            <div class="input-container">
+              <input placeholder="7:00 PM" class="input-field" type="text" />
+              <label for="input-field" class="input-label"
+                >Lugar del evento</label
+              >
+              <span class="input-highlight"></span>
+            </div>
+          </div>
+
+          <p><br />Imagen promocional del evento<br /><br /></p>
+
+          <label for="file" class="labelFile"
+            ><span
+              ><svg
+                xml:space="preserve"
+                viewBox="0 0 184.69 184.69"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                id="Capa_1"
+                version="1.1"
+                width="60px"
+                height="60px"
+              >
+                <g>
+                  <g>
+                    <g>
+                      <path
+                        d="M149.968,50.186c-8.017-14.308-23.796-22.515-40.717-19.813
+                                                          C102.609,16.43,88.713,7.576,73.087,7.576c-22.117,0-40.112,17.994-40.112,40.115c0,0.913,0.036,1.854,0.118,2.834
+                                                          C14.004,54.875,0,72.11,0,91.959c0,23.456,19.082,42.535,42.538,42.535h33.623v-7.025H42.538
+                                                          c-19.583,0-35.509-15.929-35.509-35.509c0-17.526,13.084-32.621,30.442-35.105c0.931-0.132,1.768-0.633,2.326-1.392
+                                                          c0.555-0.755,0.795-1.704,0.644-2.63c-0.297-1.904-0.447-3.582-0.447-5.139c0-18.249,14.852-33.094,33.094-33.094
+                                                          c13.703,0,25.789,8.26,30.803,21.04c0.63,1.621,2.351,2.534,4.058,2.14c15.425-3.568,29.919,3.883,36.604,17.168
+                                                          c0.508,1.027,1.503,1.736,2.641,1.897c17.368,2.473,30.481,17.569,30.481,35.112c0,19.58-15.937,35.509-35.52,35.509H97.391
+                                                          v7.025h44.761c23.459,0,42.538-19.079,42.538-42.535C184.69,71.545,169.884,53.901,149.968,50.186z"
+                        style="fill: #010002"
+                      ></path>
+                    </g>
+                    <g>
+                      <path
+                        d="M108.586,90.201c1.406-1.403,1.406-3.672,0-5.075L88.541,65.078
+                                                          c-0.701-0.698-1.614-1.045-2.534-1.045l-0.064,0.011c-0.018,0-0.036-0.011-0.054-0.011c-0.931,0-1.85,0.361-2.534,1.045
+                                                          L63.31,85.127c-1.403,1.403-1.403,3.672,0,5.075c1.403,1.406,3.672,1.406,5.075,0L82.296,76.29v97.227
+                                                          c0,1.99,1.603,3.597,3.593,3.597c1.979,0,3.59-1.607,3.59-3.597V76.165l14.033,14.036
+                                                          C104.91,91.608,107.183,91.608,108.586,90.201z"
+                        style="fill: #010002"
+                      ></path>
+                    </g>
+                  </g>
+                </g></svg
+            ></span>
+            <p>Inserte aquí la imagen!</p></label
+          >
+          <input class="input" name="text" id="file" type="file" />
+        </div>
+        <div class="datos_boleto">
+          <p class="title">Datos del evento<br /><br /></p>
+          <div class="datos_boleto_container">
+            <div class="input-container">
+              <input
+                placeholder="N° de boletos para venta : 45000"
+                class="input-field"
+                type="text"
+              />
+              <label for="input-field" class="input-label"
+                >N° de boletos para venta</label
+              >
+              <span class="input-highlight"></span>
+            </div>
+            <div class="input-container">
+              <input
+                placeholder="Costo mínimo : $800"
+                class="input-field"
+                type="text"
+              />
+              <label for="input-field" class="input-label">Costo mínimo</label>
+              <span class="input-highlight"></span>
+            </div>
+            <div class="input-container">
+              <input
+                placeholder="Costo maximo : $4500"
+                class="input-field"
+                type="text"
+              />
+              <label for="input-field" class="input-label">Costo maximo</label>
+              <span class="input-highlight"></span>
+            </div>
+          </div>
+          <p>Tiempo para solicitar boletos<br /><br /></p>
+          <div><input class="input-style" type="datetime-local" /></div>
+        </div>
+        <div class="datos_asiento">
+          <p class="title">Datos del evento<br /><br /></p>
+          <p>Tipo de asiento<br /><br /></p>
+          <div class="radio-buttons">
+            <label class="radio-button">
+              <input type="radio" name="option" value="option1" />
+              <div class="radio-circle"></div>
+              <span class="radio-label">Admisión general</span>
+            </label>
+            <label class="radio-button">
+              <input type="radio" name="option" value="option2" />
+              <div class="radio-circle"></div>
+              <span class="radio-label">Asiento enumerado</span>
+            </label>
+          </div>
+
+          <p><br />Mapa del lugar del evento :<br /><br /></p>
+          <label for="file" class="labelFile"
+            ><span
+              ><svg
+                xml:space="preserve"
+                viewBox="0 0 184.69 184.69"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                id="Capa_1"
+                version="1.1"
+                width="60px"
+                height="60px"
+              >
+                <g>
+                  <g>
+                    <g>
+                      <path
+                        d="M149.968,50.186c-8.017-14.308-23.796-22.515-40.717-19.813
+                                                          C102.609,16.43,88.713,7.576,73.087,7.576c-22.117,0-40.112,17.994-40.112,40.115c0,0.913,0.036,1.854,0.118,2.834
+                                                          C14.004,54.875,0,72.11,0,91.959c0,23.456,19.082,42.535,42.538,42.535h33.623v-7.025H42.538
+                                                          c-19.583,0-35.509-15.929-35.509-35.509c0-17.526,13.084-32.621,30.442-35.105c0.931-0.132,1.768-0.633,2.326-1.392
+                                                          c0.555-0.755,0.795-1.704,0.644-2.63c-0.297-1.904-0.447-3.582-0.447-5.139c0-18.249,14.852-33.094,33.094-33.094
+                                                          c13.703,0,25.789,8.26,30.803,21.04c0.63,1.621,2.351,2.534,4.058,2.14c15.425-3.568,29.919,3.883,36.604,17.168
+                                                          c0.508,1.027,1.503,1.736,2.641,1.897c17.368,2.473,30.481,17.569,30.481,35.112c0,19.58-15.937,35.509-35.52,35.509H97.391
+                                                          v7.025h44.761c23.459,0,42.538-19.079,42.538-42.535C184.69,71.545,169.884,53.901,149.968,50.186z"
+                        style="fill: #010002"
+                      ></path>
+                    </g>
+                    <g>
+                      <path
+                        d="M108.586,90.201c1.406-1.403,1.406-3.672,0-5.075L88.541,65.078
+                                                          c-0.701-0.698-1.614-1.045-2.534-1.045l-0.064,0.011c-0.018,0-0.036-0.011-0.054-0.011c-0.931,0-1.85,0.361-2.534,1.045
+                                                          L63.31,85.127c-1.403,1.403-1.403,3.672,0,5.075c1.403,1.406,3.672,1.406,5.075,0L82.296,76.29v97.227
+                                                          c0,1.99,1.603,3.597,3.593,3.597c1.979,0,3.59-1.607,3.59-3.597V76.165l14.033,14.036
+                                                          C104.91,91.608,107.183,91.608,108.586,90.201z"
+                        style="fill: #010002"
+                      ></path>
+                    </g>
+                  </g>
+                </g></svg
+            ></span>
+            <p>Inserte aquí el mapa!</p></label
+          >
+          <input class="input" name="text" id="file" type="file" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

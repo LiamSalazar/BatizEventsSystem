@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="home.css" type="text/css" />
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Swiper</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        background: white;
+        overflow-y: auto; /* Permitir desplazamiento vertical */
+      }
+      .contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+      }
+      .container.swiper {
+        width: 100%;
+      }
+      .card {
+        cursor: pointer;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: 700;
+        text-align: left;
+        width: 100%;
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      function irASolicitudBoleto() {
+        window.location.href = "SolicitudBoleto2.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="contenedor" id="contenedor">
+      <h1 class="title">Populares</h1>
+      <div class="container swiper">
+        <div class="slide-container">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_1.jpg" alt="Evento 1" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_2.jpg" alt="Evento 2" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_3.jpg" alt="Evento 3" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_1.jpg" alt="Evento 4" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_2.jpg" alt="Evento 5" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <h1 class="title">Destacados</h1>
+      <div class="container swiper">
+        <div class="slide-container">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_1.jpg" alt="Evento 1" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_2.jpg" alt="Evento 2" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_3.jpg" alt="Evento 3" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_1.jpg" alt="Evento 4" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+            <div class="card swiper-slide" onclick="irASolicitudBoleto()">
+              <div class="image-box">
+                <img src="c_2.jpg" alt="Evento 5" />
+              </div>
+              <div class="profile-details">
+                <div class="name-job">
+                  <h3 class="name">Nombre del evento</h3>
+                  <h4 class="job">Lugar del evento Fecha del evento</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <script src="swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

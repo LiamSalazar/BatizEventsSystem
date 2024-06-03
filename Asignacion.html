@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asignación</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      .contenedor {
+        background: white;
+        height: 100vh;
+        display: grid;
+        font-family: "Inter", sans-serif;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+          "titulo"
+          "datos_evento";
+      }
+      .titulo {
+        grid-area: titulo;
+        font-size: 58px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 3px solid black;
+        padding: 20px;
+      }
+      .datos_evento {
+        grid-area: datos_evento;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        font-size: 32px;
+        height: 100%;
+        text-align: center;
+        position: relative;
+      }
+      .comprar-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        background: #e8e8e8;
+        font-weight: 1000;
+        font-size: 17px;
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+      }
+      .comprar-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #212121;
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        z-index: -1;
+      }
+      .comprar-btn:hover {
+        color: #e8e8e8;
+      }
+      .comprar-btn:hover::before {
+        width: 100%;
+      }
+      p {
+        margin: 10px 0;
+      }
+      .p1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .evento-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor" id="contenedor">
+      <div class="titulo">
+        <p>Resultado del sorteo</p>
+      </div>
+      <div class="datos_evento">
+        <button class="comprar-btn" onclick="location.href='CompraBoleto.html'">
+          Comprar
+        </button>
+        <div>
+          <p class="p1">Tu boleto asignado es : <br /></p>
+          <div class="evento-info">
+            <p class="p2"></p>
+            <p>Nombre del evento</p>
+            <p>Lugar del evento</p>
+            <p>Tipo de boleto</p>
+            <p>Sección</p>
+            <p>Fila</p>
+            <p>Asiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
