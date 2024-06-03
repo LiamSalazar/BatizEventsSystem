@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      .contenedor {
+        background: white;
+        height: 100vh;
+        font-family: "Inter", sans-serif;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 6fr;
+        grid-template-areas:
+          "tirulo"
+          "datos"
+          "Qr";
+      }
+      .tirulo {
+        grid-area: tirulo;
+        font-size: 58px;
+        font-weight: 500;
+        display: flex;
+        padding-left: 30px;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 3px solid black;
+      }
+      .datos {
+        grid-area: datos;
+        border-bottom: 3px solid black;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+      }
+      .texto-lateral {
+        font-size: 22px;
+        font-weight: 500;
+        padding-right: 20px;
+      }
+      .Qr {
+        grid-area: Qr;
+        border-bottom: 3px solid black;
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows: 1fr;
+      }
+      .Qr_2 {
+        padding: 20px;
+        text-align: center;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+      }
+      .Qr_2 p {
+        font-weight: bold;
+        font-size: 30px;
+      }
+      .img_qr {
+        width: 350px;
+        height: 350px;
+      }
+      .textito {
+        font-size: 20px;
+        font-weight: 500;
+        color: #878787;
+      }
+      button {
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: #212121;
+        z-index: 1;
+        background: #e8e8e8;
+        position: relative;
+        font-weight: 1000;
+        font-size: 17px;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+        overflow: hidden;
+      }
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        border-radius: 15px;
+        background-color: #212121;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+      }
+      button:hover {
+        color: #e8e8e8;
+      }
+      button:hover::before {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="tirulo">
+        <p>Entrada al evento<br /></p>
+      </div>
+      <div class="datos">
+        <div class="texto-lateral">
+          <p>
+            Este boleto se activa 2 horas previo al evento y a un alcance de 100
+            metros de la ubicación del evento
+          </p>
+        </div>
+        <button onclick="activarBoleto()">Activar boleto</button>
+      </div>
+      <div class="Qr">
+        <div class="Qr_1"></div>
+        <div class="Qr_2">
+          <p>QR Entrada<br /><br /></p>
+          <img src="qr.png" class="img_qr" />
+          <p>Fan ID</p>
+        </div>
+        <div class="Qr_3"></div>
+      </div>
+    </div>
+
+    <script>
+      function activarBoleto() {
+        alert("Se desplegará el boleto");
+      }
+    </script>
+  </body>
+</html>
